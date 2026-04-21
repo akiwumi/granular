@@ -39,7 +39,7 @@ button {
 .appShell {
   position: relative;
   display: grid;
-  min-height: 100vh;
+  min-height: 100dvh;
   place-items: center;
   padding: 12px;
   isolation: isolate;
@@ -150,7 +150,7 @@ button {
 .slideBody {
   position: relative;
   display: grid;
-  grid-template-rows: auto minmax(132px, 0.55fr) 1fr;
+  grid-template-rows: auto minmax(132px, 0.55fr) minmax(0, 1fr);
   gap: 12px;
   height: 100%;
   min-height: 0;
@@ -270,6 +270,7 @@ h1 {
 
 .details {
   min-height: 0;
+  max-height: 100%;
   overflow: auto;
   padding-bottom: 8px;
   scrollbar-width: none;
@@ -397,24 +398,25 @@ h1 {
   background: var(--acid);
 }
 
-@media (min-width: 860px) {
+@media (min-width: 700px) {
   .appShell {
-    grid-template-columns: 1fr auto 1fr;
-    gap: 42px;
-    padding: 40px;
+    gap: 24px;
+    padding: 28px;
   }
 
   .deckMeta {
     display: grid;
-    justify-self: end;
+    position: fixed;
+    top: 26px;
+    left: 28px;
+    z-index: 12;
+    grid-auto-flow: column;
+    align-items: center;
     gap: 14px;
-    width: 190px;
     color: var(--muted);
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
   }
 
   .deckMeta strong {
@@ -422,15 +424,177 @@ h1 {
   }
 
   .deviceFrame {
-    width: 420px;
-    height: 820px;
+    width: min(94vw, 920px);
+    height: min(100dvh - 118px, 680px);
     min-height: 0;
-    border-radius: 32px;
-    border: 8px solid #121212;
+    border: 1px solid rgba(242, 242, 234, 0.3);
+    border-radius: 16px;
     box-shadow:
       0 40px 120px rgba(0, 0, 0, 0.78),
       0 0 0 1px rgba(242, 242, 234, 0.22),
       0 0 60px rgba(184, 255, 0, 0.16);
+  }
+
+  .slideBody {
+    grid-template:
+      "copy visual" minmax(190px, 1.05fr)
+      "details visual" minmax(0, 0.85fr) / minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .copy {
+    grid-area: copy;
+    align-self: end;
+  }
+
+  h1 {
+    max-width: 11ch;
+    font-size: clamp(72px, 9vw, 118px);
+  }
+
+  .subtitle {
+    max-width: 44ch;
+    font-size: 14px;
+  }
+
+  .visual {
+    grid-area: visual;
+    border: 1px solid var(--line);
+    border-right: 0;
+    border-left: 0;
+    padding: 18px;
+  }
+
+  .details {
+    grid-area: details;
+    padding: 0;
+  }
+
+  .details p,
+  .details li,
+  .column span {
+    font-size: 13px;
+  }
+
+  .flowStack {
+    gap: 10px;
+  }
+
+  .flowNode {
+    padding: 12px 14px;
+    font-size: clamp(30px, 4.4vw, 52px);
+  }
+
+  .statGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .statCell {
+    min-height: 84px;
+    font-size: clamp(34px, 5vw, 62px);
+  }
+
+  .receiptBlock {
+    width: min(100%, 420px);
+    font-size: clamp(18px, 2.8vw, 27px);
+  }
+
+  .kineticWord {
+    font-size: clamp(120px, 16vw, 220px);
+  }
+
+  .columns {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .navigation {
+    right: 28px;
+    bottom: 24px;
+    left: 28px;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+  }
+
+  .navigation > button {
+    width: 52px;
+    height: 44px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .appShell {
+    grid-template-columns: minmax(132px, 0.28fr) minmax(0, auto) minmax(76px, 0.18fr);
+    gap: 36px;
+    padding: 40px;
+  }
+
+  .deckMeta {
+    position: static;
+    grid-auto-flow: row;
+    justify-self: end;
+    width: 172px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .deviceFrame {
+    width: min(calc(100vw - 360px), calc((100dvh - 84px) * 1.6), 1180px);
+    height: auto;
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
+  }
+
+  .ticker {
+    height: 38px;
+  }
+
+  .tickerTrack {
+    font-size: 12px;
+  }
+
+  .slideHeader {
+    padding: 18px 24px 0;
+    font-size: 11px;
+  }
+
+  .slideBody {
+    grid-template:
+      "copy visual" minmax(260px, 1fr)
+      "details visual" minmax(0, 0.68fr) / minmax(390px, 0.94fr) minmax(430px, 1.06fr);
+    gap: 24px;
+    padding: 26px 24px 24px;
+  }
+
+  h1 {
+    max-width: 12ch;
+    font-size: clamp(84px, 8vw, 138px);
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .details {
+    display: grid;
+    align-content: start;
+  }
+
+  .details p,
+  .details li,
+  .column span {
+    font-size: 14px;
+  }
+
+  .details ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .columns {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .column strong {
+    font-size: 32px;
   }
 
   .navigation {
@@ -455,7 +619,7 @@ h1 {
   }
 }
 
-@media (max-height: 720px) {
+@media (max-width: 699px) and (max-height: 720px) {
   .deviceFrame {
     min-height: 0;
     height: calc(100dvh - 74px);
@@ -466,7 +630,41 @@ h1 {
   }
 
   .slideBody {
-    grid-template-rows: auto minmax(92px, 0.45fr) 1fr;
+    grid-template-rows: auto minmax(92px, 0.45fr) minmax(0, 1fr);
     gap: 9px;
+  }
+}
+
+@media (min-width: 700px) and (max-height: 720px) {
+  .appShell {
+    padding-top: 52px;
+  }
+
+  .deckMeta {
+    top: 14px;
+  }
+
+  .deviceFrame {
+    height: calc(100dvh - 118px);
+  }
+
+  .slideBody {
+    grid-template:
+      "copy visual" minmax(150px, 0.9fr)
+      "details visual" minmax(0, 0.8fr) / minmax(0, 1.02fr) minmax(260px, 0.98fr);
+    gap: 14px;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: clamp(58px, 8vw, 92px);
+  }
+
+  .subtitle {
+    margin-top: 10px;
+  }
+
+  .statCell {
+    min-height: 64px;
   }
 }
