@@ -16,7 +16,12 @@ const slides = [
     subtitle: "Not just where it went. Exactly what was bought.",
     accent: "green",
     mode: "hero",
-    ticker: ["PRIVACY-FIRST PERSONAL FINANCE", "DIGITAL RECEIPTS", "ITEM-LEVEL INTELLIGENCE"],
+    ticker: [
+      "PRIVACY-FIRST PERSONAL FINANCE",
+      "DIGITAL RECEIPTS",
+      "ITEM-LEVEL INTELLIGENCE",
+      "OPT-IN CASHBACK",
+    ],
     blocks: [
       "Receipt intelligence for people who want financial control without surrendering their private life.",
     ],
@@ -81,6 +86,7 @@ const slides = [
       "Connect cards where supported",
       "Use manual balance without bank linking",
       "Budget, alert, search, export",
+      "Earn opt-in cashback when eligible purchases match clear rules",
     ],
   },
   {
@@ -105,6 +111,7 @@ const slides = [
       "Start in local-first mode",
       "Choose scan, import, manual balance, or card connection",
       "Explain privacy before requesting data access",
+      "Introduce cashback as opt-in value, not a data access gate",
       "Introduce card/bank linking as an enhancement",
     ],
   },
@@ -135,6 +142,7 @@ const slides = [
       "Category and card where matched",
       "Receipt image for proof of purchase",
       "Edit categories, mark recurring items, compare prices",
+      "Cashback offers checked against scanned line items",
     ],
   },
   {
@@ -160,7 +168,7 @@ const slides = [
       "Retailer-specific limits",
       "Item-category limits",
       "Card-level spending limits",
-      "Alerts for inflation, retailer drift, and budget pressure",
+      "Alerts for inflation, retailer drift, missed cashback, and budget pressure",
     ],
   },
   {
@@ -185,7 +193,7 @@ const slides = [
     columns: [
       ["CLARITY", "See exactly what was bought", "Find purchases fast"],
       ["CONTROL", "Track budgets by item and retailer", "Monitor multi-card spend"],
-      ["CONFIDENCE", "Keep better records", "Plan from real behavior"],
+      ["SAVINGS", "Earn cashback on eligible normal purchases", "See every reward rule and payout state"],
     ],
   },
   {
@@ -200,11 +208,66 @@ const slides = [
       "Retailer drift detection",
       "Advanced budget controls",
       "Household planning views",
+      "Cashback boosts and priority offer matching",
+      "Missed-offer detection and retailer savings comparisons",
       "Richer exports and trend reports",
     ],
   },
   {
     id: "16",
+    kicker: "CASHBACK",
+    title: "REWARDS WITHOUT THE DATA TRAP.",
+    subtitle: "Users save when normal purchases qualify. They stay in control of what gets shared.",
+    accent: "green",
+    flow: ["ACTIVATE", "SHOP", "SCAN", "MATCH", "LEDGER", "PAYOUT"],
+    blocks: [
+      "Cashback is an opt-in rewards layer built on receipt intelligence, not a hidden loyalty profile.",
+      "Offers are funded by retailers, brands, or affiliate campaigns. Granular earns a margin — the user keeps the reward.",
+      "Reward matching runs locally first. Only a minimal claim record is shared when partner verification requires it.",
+      "Rewards move through clear states: available, activated, pending, confirmed, and paid. Users see exactly where each claim stands.",
+    ],
+    ticker: ["OPT-IN OFFERS", "LOCAL MATCHING", "MINIMAL CLAIM DATA", "REWARD LEDGER"],
+  },
+  {
+    id: "17",
+    kicker: "CASHBACK FUNDING",
+    title: "THREE WAYS REWARDS GET PAID.",
+    subtitle: "Retailer campaigns, brand products, and Granular promotions — all opt-in and fully disclosed.",
+    accent: "green",
+    columns: [
+      ["RETAILER", "Digital receipt adoption rewards", "Repeat purchase incentives", "No full loyalty enrollment required"],
+      ["BRAND", "Product-level offer matching", "Bundle and category rewards", "Item data advantage over merchant apps"],
+      ["GRANULAR", "First receipt reward", "Onboarding completion boost", "Referral after verified active use"],
+    ],
+    ticker: ["RETAILER-FUNDED", "BRAND-FUNDED", "GRANULAR-PROMO", "ALWAYS TRANSPARENT"],
+  },
+  {
+    id: "18",
+    kicker: "CASHBACK ECONOMICS",
+    title: "PARTNER PAYS. USER SAVES. GRANULAR EARNS.",
+    subtitle: "Offer funding flows from campaign partners to users, with Granular earning on each validated claim.",
+    accent: "green",
+    receipt: ["BRAND FUNDS    GBP1.25", "USER EARNS     GBP1.00", "GRANULAR KEEPS GBP0.25"],
+    blocks: [
+      "Revenue: campaign setup fees, a percentage of funded cashback spend, and retailer platform access fees.",
+      "Cashback is never funded by selling user profiles. Partner fees are commercial contracts. All user-facing rewards are fully disclosed.",
+    ],
+  },
+  {
+    id: "19",
+    kicker: "CASHBACK REWARDS",
+    title: "USERS SEE EVERY CLAIM STATE.",
+    subtitle: "Available, activated, pending, confirmed, paid. No mystery, no fine print.",
+    accent: "green",
+    stats: ["AVAILABLE", "ACTIVATED", "PENDING", "CONFIRMED", "PAID", "LEDGER"],
+    blocks: [
+      "Every cashback offer moves through explicit states the user can see at any time.",
+      "The rewards ledger shows claim amount, offer source, confirmation timeline, and payout status — no hidden holding periods, no unexplained delays.",
+    ],
+    ticker: ["CLAIM STATES", "REWARD LEDGER", "FULL TRANSPARENCY", "USER CONTROL"],
+  },
+  {
+    id: "20",
     kicker: "PRIVACY",
     title: "TRUST IS THE PRODUCT FEATURE.",
     subtitle: "Purchase history reveals more than users want companies to know.",
@@ -212,12 +275,13 @@ const slides = [
     blocks: [
       "Detailed purchase history stays on the user's phone by default.",
       "Granular does not depend on selling personal profiles.",
-      "Optional sync and integrations should be explicit and consent-led.",
+      "Cashback claims are structurally separated from the user's full private purchase history. Only the minimal claim record needed for validation is ever shared.",
+      "Every data sharing decision in the cashback flow is explicit, consent-led, and tied to a specific offer — not a general licence to process purchase behaviour.",
     ],
-    ticker: ["LOCAL-FIRST", "MINIMAL COORDINATION DATA", "EXPORT", "DELETE", "CONSENT"],
+    ticker: ["LOCAL-FIRST", "MINIMAL CLAIM DATA", "EXPORT", "DELETE", "CONSENT"],
   },
   {
-    id: "17",
+    id: "21",
     kicker: "RETAILER VALUE",
     title: "DIGITAL RECEIPTS WITHOUT THE LOYALTY TRAP.",
     subtitle: "A better post-purchase layer for retailers and customers.",
@@ -228,42 +292,45 @@ const slides = [
       "Improve proof-of-purchase and returns flows",
       "Modernize beyond paper and loyalty-only receipt models",
       "Offer privacy-aware customer experience",
+      "Fund transparent cashback campaigns without demanding full loyalty enrollment",
+      "Run product and category campaigns validated through item-level receipt matching",
     ],
   },
   {
-    id: "18",
+    id: "22",
     kicker: "ARCHITECTURE",
-    title: "MANUAL NOW. MATCHED NEXT. INTEGRATED LATER.",
-    subtitle: "Six layers scale from receipt capture to retailer infrastructure.",
+    title: "MANUAL NOW. MATCHED NEXT. REWARDED LATER.",
+    subtitle: "Seven layers scale from receipt capture to retailer infrastructure.",
     accent: "green",
-    flow: ["RECEIPT", "PURCHASE", "PAYMENTS", "SPENDING", "RETAIL API", "PRIVACY"],
+    flow: ["RECEIPT", "PURCHASE", "PAYMENTS", "SPENDING", "REWARDS", "RETAIL API", "PRIVACY"],
     blocks: [
-      "Launch with receipt intelligence. Improve with payment matching. Scale with focused retailer integrations.",
+      "Launch with receipt intelligence. Improve with payment matching. Add transparent offer matching once item data is reliable. Scale with focused retailer integrations.",
     ],
   },
   {
-    id: "19",
+    id: "23",
     kicker: "MODEL + ROADMAP",
     title: "CONSUMER WEDGE. B2B UPSIDE.",
-    subtitle: "Freemium app now; digital receipt infrastructure as the network grows.",
+    subtitle: "Freemium app now; rewards and digital receipt infrastructure as the network grows.",
     accent: "green",
     columns: [
-      ["PHASE 1", "Receipt scan/import", "Itemized history"],
-      ["PHASE 2", "Budgets and alerts", "Multi-card analysis"],
-      ["PHASE 3", "Card matching", "Retailer API pilots"],
-      ["PHASE 4", "Retailer network", "Post-purchase workflows"],
+      ["PHASE 1", "Receipt scan/import", "Itemized history", "Cashback pilot offers"],
+      ["PHASE 2", "Budgets and alerts", "Multi-card analysis", "Brand product campaigns"],
+      ["PHASE 3", "Retailer cashback pilots", "Auto receipt matching", "Partner-funded offers"],
+      ["PHASE 4", "Card matching", "Retailer API pilots", "Full rewards wallet"],
+      ["PHASE 5", "Retailer network", "Post-purchase workflows", "Multi-payout options"],
     ],
   },
   {
-    id: "20",
+    id: "24",
     kicker: "WHY GRANULAR WINS",
     title: "THE LOOP COMPOUNDS.",
     subtitle: "Every receipt makes the app more useful. Every integration makes it more automatic.",
     accent: "green",
-    flow: ["FIRST RECEIPT", "BETTER HISTORY", "SMARTER ALERTS", "MATCHING", "INTEGRATIONS", "TRUST"],
+    flow: ["FIRST RECEIPT", "BETTER HISTORY", "SMARTER ALERTS", "CASHBACK", "INTEGRATIONS", "TRUST"],
     blocks: [
       "Granular is not just tracking transactions.",
-      "It is building a privacy-first system that turns purchases into usable financial understanding.",
+      "It is building a privacy-first system that turns purchases into usable financial understanding, direct savings, and partner infrastructure.",
     ],
   },
 ];
@@ -387,7 +454,7 @@ function KineticWord({ word }) {
   );
 }
 
-function SlideContent({ slide }) {
+function SlideContent({ slide, totalSlides }) {
   return (
     <motion.article
       className={`slide slide-${slide.accent}`}
@@ -400,7 +467,9 @@ function SlideContent({ slide }) {
       <Ticker words={slide.ticker} />
       <header className="slideHeader">
         <span>{slide.kicker}</span>
-        <span>{slide.id}/20</span>
+        <span>
+          {slide.id}/{totalSlides}
+        </span>
       </header>
       <main className="slideBody">
         <section className="copy">
@@ -493,7 +562,7 @@ function App() {
 
       <section className="deviceFrame" aria-label="Granular pitch deck">
         <AnimatePresence mode="wait">
-          <SlideContent key={activeSlide.id} slide={activeSlide} />
+          <SlideContent key={activeSlide.id} slide={activeSlide} totalSlides={slides.length} />
         </AnimatePresence>
       </section>
 
