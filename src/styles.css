@@ -196,7 +196,7 @@ h1 {
   overflow: hidden;
   color: transparent;
   font-family: var(--display);
-  font-size: clamp(82px, 28vw, 180px);
+  font-size: clamp(46px, 14vw, 68px);
   line-height: 0.8;
   text-align: center;
   text-transform: uppercase;
@@ -501,7 +501,7 @@ h1 {
   }
 
   .kineticWord {
-    font-size: clamp(112px, 14vw, 196px);
+    font-size: clamp(56px, 7.5vw, 86px);
   }
 
   .columns {
@@ -601,7 +601,7 @@ h1 {
   }
 
   .kineticWord {
-    font-size: clamp(104px, 13vw, 188px);
+    font-size: clamp(76px, 7vw, 116px);
   }
 
   .details ul {
