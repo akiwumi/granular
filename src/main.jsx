@@ -8,334 +8,171 @@ import "@fontsource/jetbrains-mono/700.css";
 import "@fontsource/jetbrains-mono/800.css";
 import "./styles.css";
 
+const logoSrc = "/yellow-logo.png";
+
 const slides = [
   {
     id: "01",
-    kicker: "GRANULAR // INVESTOR DECK",
-    title: "SEE WHAT MONEY BECAME.",
-    subtitle: "Not just where it went. Exactly what was bought.",
+    kicker: "GRANULAR // PITCH DECK II",
+    title: "THE ITEMIZED SPENDING LAYER.",
+    subtitle: "For everything a household pays for.",
     accent: "green",
     mode: "hero",
     ticker: [
-      "PRIVACY-FIRST PERSONAL FINANCE",
-      "DIGITAL RECEIPTS",
-      "ITEM-LEVEL INTELLIGENCE",
-      "OPT-IN CASHBACK",
+      "DIRECT RETAILER CONNECTIONS",
+      "BILLER VISIBILITY",
+      "VERIFIABLE HOUSEHOLD RECORDS",
+      "ITEMIZED SPENDING",
     ],
     blocks: [
-      "Receipt intelligence for people who want financial control without surrendering their private life.",
+      "Granular gives households direct retailer-to-user and biller-to-user visibility so spending records arrive with more context, more detail, and more proof.",
     ],
   },
   {
     id: "02",
-    kicker: "ONE-LINE SUMMARY",
-    title: "BASKETS BECOME FINANCIAL RECORDS.",
-    subtitle: "Granular turns receipts and purchases into item-level spending intelligence.",
-    accent: "green",
-    stats: ["WHAT", "WHERE", "CARD", "IMPACT"],
-    blocks: [
-      "Most finance apps tell users the merchant and total.",
-      "Granular shows what they bought, how it changed their spending, and which products, stores, and habits are moving over time.",
+    kicker: "THE PROBLEM",
+    title: "HOUSEHOLD SPENDING IS FRAGMENTED.",
+    subtitle: "People see money leaving. They rarely see the full record behind it.",
+    accent: "red",
+    bullets: [
+      "Shops and online stores",
+      "Utilities and mortgage payments",
+      "Service providers and recurring bills",
+      "Paper receipts and email receipts",
+      "Bank records and cash purchases",
     ],
   },
   {
     id: "03",
-    kicker: "THE PROBLEM",
-    title: "BANK FEEDS STOP TOO EARLY.",
-    subtitle: "Tesco - GBP84.20 is not an explanation.",
-    accent: "red",
-    receipt: ["TESCO  GBP84.20", "AMAZON GBP31.50", "BOOTS  GBP18.40"],
+    kicker: "CORE INSIGHT",
+    title: "THE REAL GAP IS ITEMIZATION.",
+    subtitle: "Payment movement is visible. Spending detail usually is not.",
+    accent: "green",
+    stats: ["BASKETS", "BILLS", "ITEMS", "DRIFT", "PROOF", "CONTROL"],
     blocks: [
-      "Users still ask: What did I buy? Which products pushed me over budget? Which retailer is getting expensive for me?",
-      "Merchant-level transaction data is useful, but it is not enough for practical financial control.",
+      "People feel cost pressure at the level of grocery baskets, household essentials, utility bills, mortgage obligations, and recurring services.",
+      "The winning product connects users directly to the businesses they pay so spending enters the app already itemized wherever possible.",
     ],
   },
   {
     id: "04",
-    kicker: "USER PAIN",
-    title: "REAL SPENDING IS MESSY.",
-    subtitle: "Receipts scatter. Cards multiply. Categories blur.",
-    accent: "red",
+    kicker: "THE SOLUTION",
+    title: "DIRECT RECORDS. ONE PLACE.",
+    subtitle: "Retailers and billers feed structured purchase and billing data into the app.",
+    accent: "green",
+    flow: ["CONNECT", "PULL", "ITEMIZE", "VERIFY", "TRACK"],
     bullets: [
-      "Paper, email, PDFs, and retailer accounts",
-      "Multiple cards and household purchasing patterns",
-      "Delayed bank feeds and broad categories",
-      "No clear answer to why money feels tighter",
+      "See what was bought",
+      "See what was paid for",
+      "Spot drifting categories",
+      "See recurring bills increasing",
+      "Measure how much spending is directly verified",
     ],
   },
   {
     id: "05",
-    kicker: "THE INSIGHT",
-    title: "THE BASKET IS THE EVENT.",
-    subtitle: "A payment says money moved. A basket says why.",
+    kicker: "PRODUCT INPUTS",
+    title: "FOUR LAYERS CREATE COVERAGE.",
+    subtitle: "Automation first, capture everywhere else.",
     accent: "green",
-    stats: ["ITEMS", "QTY", "PRICE", "DISCOUNT", "CARD", "IMPACT"],
+    flow: ["DIRECT APIS", "IMPORTS", "OCR REVIEW", "MANUAL INPUT"],
     blocks: [
-      "Granular makes the basket the core record: retailer, date, items, quantities, prices, discounts, payment method where available, and spending impact.",
+      "Granular combines direct retailer and biller API connections, digital receipt and invoice imports, OCR review for scanned documents, and manual input for non-connected providers or cash transactions.",
+      "The result is a structured household spending record that aims to leave nothing important out.",
     ],
   },
   {
     id: "06",
-    kicker: "WHAT IT IS",
-    title: "A RECEIPT-FIRST FINANCE APP.",
-    subtitle: "Useful on day one, more automated over time.",
-    accent: "green",
-    bullets: [
-      "Scan and upload receipts",
-      "Import digital receipts",
-      "Connect cards where supported",
-      "Use manual balance without bank linking",
-      "Budget, alert, search, export",
-      "Earn opt-in cashback when eligible purchases match clear rules",
+    kicker: "WHY THIS IS DIFFERENT",
+    title: "MOST APPS SUMMARIZE. GRANULAR ITEMIZES.",
+    subtitle: "This is obligation-level and line-item level, not just merchant-level reporting.",
+    accent: "red",
+    columns: [
+      ["MOST APPS", "Merchant-level summaries", "Account access first", "After-the-fact views"],
+      ["GRANULAR", "Line-item and obligation detail", "Retailer and biller data first", "Living purchase intelligence"],
     ],
   },
   {
     id: "07",
-    kicker: "WHAT IT DOES",
-    title: "ORGANIZES THE AFTERMATH OF EVERY PURCHASE.",
-    subtitle: "Store, date, item list, prices, card, category, budget impact.",
+    kicker: "PRODUCT SCOPE",
+    title: "ONE APP FOR THE FULL HOUSEHOLD PICTURE.",
+    subtitle: "Not limited to retail shopping.",
     accent: "green",
-    blocks: [
-      "Across purchases, Granular shows spending by retailer, item, category, card, and period.",
-      "Repeat purchases and item price changes become visible before budget pressure becomes painful.",
+    bullets: [
+      "Physical retail",
+      "E-commerce",
+      "Grocery and pharmacy",
+      "Utilities and energy",
+      "Mortgage payments",
+      "Recurring household services",
+      "Cash spending via manual capture",
     ],
   },
   {
     id: "08",
-    kicker: "USE FLOW // 01",
-    title: "ONBOARD WITHOUT PRESSURE.",
-    subtitle: "Give value before asking for deeper access.",
+    kicker: "TRUST LAYER",
+    title: "BLOCKCHAIN STAYS UNDER THE SURFACE.",
+    subtitle: "It supports trust without turning the app into a crypto product.",
     accent: "green",
-    flow: ["START LOCAL", "SCAN RECEIPT", "SEE VALUE", "OPTIONAL LINK"],
-    bullets: [
-      "Start in local-first mode",
-      "Choose scan, import, manual balance, or card connection",
-      "Explain privacy before requesting data access",
-      "Introduce cashback as opt-in value, not a data access gate",
-      "Introduce card/bank linking as an enhancement",
+    columns: [
+      ["OFF-CHAIN", "Receipt images", "Invoice contents", "User identities", "Analytics and budgets"],
+      ["VERIFIED", "Hashes", "Timestamps", "Partner attestations", "Permission logs", "Proof references"],
     ],
   },
   {
     id: "09",
-    kicker: "USE FLOW // 02",
-    title: "CAPTURE THE RECEIPT.",
-    subtitle: "Loose proof becomes structured intelligence.",
+    kicker: "BUSINESS MODEL",
+    title: "SUBSCRIPTION FIRST. INFRASTRUCTURE NEXT.",
+    subtitle: "Consumer value leads, integration revenue follows.",
     accent: "green",
-    flow: ["CAMERA", "OCR", "CONFIRM", "SAVE", "UPDATE"],
-    bullets: [
-      "Scan paper receipts with the phone camera",
-      "Upload image, PDF, email, or digital receipt",
-      "Read retailer, date, total, and line items",
-      "Ask for confirmation only when needed",
-      "Update spending view and budgets instantly",
+    columns: [
+      ["STAGE 1", "Consumer subscription", "Overspend prevention", "Inflation visibility", "Advanced reporting"],
+      ["STAGE 2", "Retailer and biller revenue", "Integration fees", "Onboarding fees", "Structured delivery support"],
+      ["STAGE 3", "Infrastructure expansion", "Verification APIs", "Permission workflows", "Provenance services"],
     ],
   },
   {
     id: "10",
-    kicker: "USE FLOW // 03",
-    title: "REVIEW THE BASKET.",
-    subtitle: "The receipt becomes searchable, editable, and useful.",
-    accent: "green",
-    receipt: ["STORE: TESCO", "ITEMS: 17", "TOTAL: GBP84.20", "BUDGET HIT: +12%"],
-    bullets: [
-      "Clean itemized basket",
-      "Category and card where matched",
-      "Receipt image for proof of purchase",
-      "Edit categories, mark recurring items, compare prices",
-      "Cashback offers checked against scanned line items",
+    kicker: "LAUNCH POSITION",
+    title: "SOFTWARE-LED, NOT PAYMENTS-LED.",
+    subtitle: "The launch product monitors, analyzes, categorizes, and verifies spending without moving funds.",
+    accent: "red",
+    receipt: ["MONITORS SPEND", "TRACKS VERIFIED RECORDS", "NO WALLET", "NO BALANCE HOLDING"],
+    blocks: [
+      "Granular does not execute payments at launch. It analyzes purchases and bills, tracks verified records, and matches payment context where useful.",
+      "That keeps the launch operationally focused and avoids unnecessary payment complexity on day one.",
     ],
   },
   {
     id: "11",
-    kicker: "USE FLOW // 04",
-    title: "SEE WHERE YOU STAND.",
-    subtitle: "A purchase-aware spending view, not a delayed statement.",
+    kicker: "GO-TO-MARKET",
+    title: "START WITH PEOPLE WHO FEEL THE DRIFT.",
+    subtitle: "Consumer wedge first, partner wedge alongside it.",
     accent: "green",
-    stats: ["WEEK", "MONTH", "STORE", "ITEM", "CARD", "ALL"],
+    columns: [
+      ["CONSUMER", "Privacy-conscious users", "Inflation-sensitive households", "Budget-aware consumers", "Recurring spend visibility seekers"],
+      ["PARTNER", "Focused retailers", "Online merchants", "Utilities", "Recurring household billers"],
+    ],
     blocks: [
-      "Granular brings together scanned receipts, imported digital receipts, card activity where available, manual entries, budgets, and alerts.",
-      "The app answers: What have I actually spent, and what did I spend it on?",
+      "The partner story is practical: send already itemized records directly into the consumer experience.",
     ],
   },
   {
     id: "12",
-    kicker: "USE FLOW // 05",
-    title: "MOVE FROM TRACKING TO PREVENTION.",
-    subtitle: "Budgets and alerts respond to baskets, not vague categories.",
-    accent: "red",
-    bullets: [
-      "Weekly and monthly budgets",
-      "Retailer-specific limits",
-      "Item-category limits",
-      "Card-level spending limits",
-      "Alerts for inflation, retailer drift, missed cashback, and budget pressure",
-    ],
-  },
-  {
-    id: "13",
-    kicker: "USE FLOW // 06",
-    title: "SEARCH. TREND. EXPORT.",
-    subtitle: "The user owns the history and can take it with them.",
+    kicker: "CLOSING",
+    title: "SEE EVERYTHING. IN ITEMIZED FORM.",
+    subtitle: "One place for the household spending record, even before the network is complete.",
     accent: "green",
-    stats: ["ITEM", "STORE", "DATE", "CARD", "CATEGORY", "AMOUNT"],
+    ticker: ["ITEMIZED RECORDS", "DIRECT CONNECTIONS", "MANUAL COVERAGE", "TRUST UNDERNEATH"],
     blocks: [
-      "Search by item, store, date, card, category, or amount.",
-      "Track repeat-item price changes, monthly essentials, and grocery/pharmacy/household patterns.",
-      "Export spreadsheets, PDF summaries, Excel files, and receipt records.",
-    ],
-  },
-  {
-    id: "14",
-    kicker: "USER BENEFITS",
-    title: "CLARITY. CONTROL. CONFIDENCE.",
-    subtitle: "Spending becomes something the user can act on.",
-    accent: "green",
-    columns: [
-      ["CLARITY", "See exactly what was bought", "Find purchases fast"],
-      ["CONTROL", "Track budgets by item and retailer", "Monitor multi-card spend"],
-      ["SAVINGS", "Earn cashback on eligible normal purchases", "See every reward rule and payout state"],
-    ],
-  },
-  {
-    id: "15",
-    kicker: "PREMIUM BENEFITS",
-    title: "NOT MORE CHARTS. EARLIER WARNINGS.",
-    subtitle: "Premium prevents financial drift before it becomes painful.",
-    accent: "red",
-    bullets: [
-      "Overspend alerts",
-      "Repeat-item inflation detection",
-      "Retailer drift detection",
-      "Advanced budget controls",
-      "Household planning views",
-      "Cashback boosts and priority offer matching",
-      "Missed-offer detection and retailer savings comparisons",
-      "Richer exports and trend reports",
-    ],
-  },
-  {
-    id: "16",
-    kicker: "CASHBACK",
-    title: "REWARDS WITHOUT THE DATA TRAP.",
-    subtitle: "Users save when normal purchases qualify. They stay in control of what gets shared.",
-    accent: "green",
-    flow: ["ACTIVATE", "SHOP", "SCAN", "MATCH", "LEDGER", "PAYOUT"],
-    blocks: [
-      "Cashback is an opt-in rewards layer built on receipt intelligence, not a hidden loyalty profile.",
-      "Offers are funded by retailers, brands, or affiliate campaigns. Granular earns a margin — the user keeps the reward.",
-      "Reward matching runs locally first. Only a minimal claim record is shared when partner verification requires it.",
-      "Rewards move through clear states: available, activated, pending, confirmed, and paid. Users see exactly where each claim stands.",
-    ],
-    ticker: ["OPT-IN OFFERS", "LOCAL MATCHING", "MINIMAL CLAIM DATA", "REWARD LEDGER"],
-  },
-  {
-    id: "17",
-    kicker: "CASHBACK FUNDING",
-    title: "THREE WAYS REWARDS GET PAID.",
-    subtitle: "Retailer campaigns, brand products, and Granular promotions — all opt-in and fully disclosed.",
-    accent: "green",
-    columns: [
-      ["RETAILER", "Digital receipt adoption rewards", "Repeat purchase incentives", "No full loyalty enrollment required"],
-      ["BRAND", "Product-level offer matching", "Bundle and category rewards", "Item data advantage over merchant apps"],
-      ["GRANULAR", "First receipt reward", "Onboarding completion boost", "Referral after verified active use"],
-    ],
-    ticker: ["RETAILER-FUNDED", "BRAND-FUNDED", "GRANULAR-PROMO", "ALWAYS TRANSPARENT"],
-  },
-  {
-    id: "18",
-    kicker: "CASHBACK ECONOMICS",
-    title: "PARTNER PAYS. USER SAVES. GRANULAR EARNS.",
-    subtitle: "Offer funding flows from campaign partners to users, with Granular earning on each validated claim.",
-    accent: "green",
-    receipt: ["BRAND FUNDS    GBP1.25", "USER EARNS     GBP1.00", "GRANULAR KEEPS GBP0.25"],
-    blocks: [
-      "Revenue: campaign setup fees, a percentage of funded cashback spend, and retailer platform access fees.",
-      "Cashback is never funded by selling user profiles. Partner fees are commercial contracts. All user-facing rewards are fully disclosed.",
-    ],
-  },
-  {
-    id: "19",
-    kicker: "CASHBACK REWARDS",
-    title: "USERS SEE EVERY CLAIM STATE.",
-    subtitle: "Available, activated, pending, confirmed, paid. No mystery, no fine print.",
-    accent: "green",
-    stats: ["AVAILABLE", "ACTIVATED", "PENDING", "CONFIRMED", "PAID", "LEDGER"],
-    blocks: [
-      "Every cashback offer moves through explicit states the user can see at any time.",
-      "The rewards ledger shows claim amount, offer source, confirmation timeline, and payout status — no hidden holding periods, no unexplained delays.",
-    ],
-    ticker: ["CLAIM STATES", "REWARD LEDGER", "FULL TRANSPARENCY", "USER CONTROL"],
-  },
-  {
-    id: "20",
-    kicker: "PRIVACY",
-    title: "TRUST IS THE PRODUCT FEATURE.",
-    subtitle: "Purchase history reveals more than users want companies to know.",
-    accent: "green",
-    blocks: [
-      "Detailed purchase history stays on the user's phone by default.",
-      "Granular does not depend on selling personal profiles.",
-      "Cashback claims are structurally separated from the user's full private purchase history. Only the minimal claim record needed for validation is ever shared.",
-      "Every data sharing decision in the cashback flow is explicit, consent-led, and tied to a specific offer — not a general licence to process purchase behaviour.",
-    ],
-    ticker: ["LOCAL-FIRST", "MINIMAL CLAIM DATA", "EXPORT", "DELETE", "CONSENT"],
-  },
-  {
-    id: "21",
-    kicker: "RETAILER VALUE",
-    title: "DIGITAL RECEIPTS WITHOUT THE LOYALTY TRAP.",
-    subtitle: "A better post-purchase layer for retailers and customers.",
-    accent: "green",
-    bullets: [
-      "Reduce paper receipt costs",
-      "Provide structured digital receipts",
-      "Improve proof-of-purchase and returns flows",
-      "Modernize beyond paper and loyalty-only receipt models",
-      "Offer privacy-aware customer experience",
-      "Fund transparent cashback campaigns without demanding full loyalty enrollment",
-      "Run product and category campaigns validated through item-level receipt matching",
-    ],
-  },
-  {
-    id: "22",
-    kicker: "ARCHITECTURE",
-    title: "MANUAL NOW. MATCHED NEXT. REWARDED LATER.",
-    subtitle: "Seven layers scale from receipt capture to retailer infrastructure.",
-    accent: "green",
-    flow: ["RECEIPT", "PURCHASE", "PAYMENTS", "SPENDING", "REWARDS", "RETAIL API", "PRIVACY"],
-    blocks: [
-      "Launch with receipt intelligence. Improve with payment matching. Add transparent offer matching once item data is reliable. Scale with focused retailer integrations.",
-    ],
-  },
-  {
-    id: "23",
-    kicker: "MODEL + ROADMAP",
-    title: "CONSUMER WEDGE. B2B UPSIDE.",
-    subtitle: "Freemium app now; rewards and digital receipt infrastructure as the network grows.",
-    accent: "green",
-    columns: [
-      ["PHASE 1", "Receipt scan/import", "Itemized history", "Cashback pilot offers"],
-      ["PHASE 2", "Budgets and alerts", "Multi-card analysis", "Brand product campaigns"],
-      ["PHASE 3", "Retailer cashback pilots", "Auto receipt matching", "Partner-funded offers"],
-      ["PHASE 4", "Card matching", "Retailer API pilots", "Full rewards wallet"],
-      ["PHASE 5", "Retailer network", "Post-purchase workflows", "Multi-payout options"],
-    ],
-  },
-  {
-    id: "24",
-    kicker: "WHY GRANULAR WINS",
-    title: "THE LOOP COMPOUNDS.",
-    subtitle: "Every receipt makes the app more useful. Every integration makes it more automatic.",
-    accent: "green",
-    flow: ["FIRST RECEIPT", "BETTER HISTORY", "SMARTER ALERTS", "CASHBACK", "INTEGRATIONS", "TRUST"],
-    blocks: [
-      "Granular is not just tracking transactions.",
-      "It is building a privacy-first system that turns purchases into usable financial understanding, direct savings, and partner infrastructure.",
+      "Granular is building the household spending layer around direct connections between consumers and the businesses they pay.",
+      "Retailer and biller APIs create the primary record. Manual receipt capture closes the coverage gap. Blockchain adds proof and trust underneath the system.",
+      "The launch story is simple: Granular helps people see everything they spend on, in itemized form, in one place.",
     ],
   },
 ];
 
-function useSwipe(activeIndex, setActiveIndex) {
+function useSwipe(setActiveIndex) {
   const [start, setStart] = useState(null);
 
   const go = useCallback(
@@ -374,7 +211,7 @@ function useSwipe(activeIndex, setActiveIndex) {
 }
 
 function Ticker({ words }) {
-  const items = words?.length ? words : ["GRANULAR", "ITEM-LEVEL", "BASKET DATA", "SPEND CONTROL"];
+  const items = words?.length ? words : ["GRANULAR", "ITEMIZED", "VERIFIED", "HOUSEHOLD SPENDING"];
   return (
     <div className="ticker" aria-hidden="true">
       <motion.div
@@ -454,6 +291,10 @@ function KineticWord({ word }) {
   );
 }
 
+function LogoMark({ className = "", alt = "Granular logo" }) {
+  return <img className={className} src={logoSrc} alt={alt} />;
+}
+
 function SlideContent({ slide, totalSlides }) {
   return (
     <motion.article
@@ -466,12 +307,17 @@ function SlideContent({ slide, totalSlides }) {
       <div className="scanline" aria-hidden="true" />
       <Ticker words={slide.ticker} />
       <header className="slideHeader">
-        <span>{slide.kicker}</span>
+        <div className="slideBrand">
+          <LogoMark className="headerLogo" />
+          <span>{slide.kicker}</span>
+        </div>
         <span>
           {slide.id}/{totalSlides}
         </span>
       </header>
       <main className="slideBody">
+        <LogoMark className="slideStamp" alt="" />
+
         <section className="copy">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -547,7 +393,7 @@ function SlideContent({ slide, totalSlides }) {
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { bind, go } = useSwipe(activeIndex, setActiveIndex);
+  const { bind, go } = useSwipe(setActiveIndex);
   const activeSlide = slides[activeIndex];
   const progress = useMemo(() => ((activeIndex + 1) / slides.length) * 100, [activeIndex]);
 
@@ -555,8 +401,9 @@ function App() {
     <div className="appShell" {...bind}>
       <div className="desktopNoise" aria-hidden="true" />
       <aside className="deckMeta">
+        <LogoMark className="metaLogo" />
         <span>GRANULAR</span>
-        <strong>BRUTALIST TICKER TENSION</strong>
+        <strong>ITEMIZED HOUSEHOLD SPENDING</strong>
         <span>SWIPE / ARROWS</span>
       </aside>
 

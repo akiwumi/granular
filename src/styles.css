@@ -139,12 +139,34 @@ button {
 .slideHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   padding: 14px 16px 0;
   color: var(--muted);
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.slideBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.headerLogo,
+.metaLogo,
+.slideStamp {
+  display: block;
+  object-fit: contain;
+}
+
+.headerLogo {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 10px rgba(255, 238, 0, 0.2));
 }
 
 .slideBody {
@@ -157,8 +179,22 @@ button {
   padding: 16px;
 }
 
+.slideStamp {
+  position: absolute;
+  right: 16px;
+  bottom: 18px;
+  z-index: 0;
+  width: 64px;
+  height: 64px;
+  opacity: 0.14;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(255, 238, 0, 0.18));
+}
+
 .copy {
   min-height: 0;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -187,6 +223,7 @@ h1 {
   display: grid;
   min-height: 0;
   place-items: center;
+  z-index: 1;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -273,6 +310,8 @@ h1 {
   max-height: 100%;
   overflow: auto;
   padding-bottom: 8px;
+  position: relative;
+  z-index: 1;
   scrollbar-width: none;
 }
 
@@ -419,6 +458,12 @@ h1 {
     text-transform: uppercase;
   }
 
+  .metaLogo {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 12px rgba(255, 238, 0, 0.2));
+  }
+
   .deckMeta strong {
     color: var(--acid);
   }
@@ -441,6 +486,13 @@ h1 {
       "details visual" minmax(0, 1fr) / minmax(0, 1.05fr) minmax(280px, 0.95fr);
     gap: 18px;
     padding: 22px;
+  }
+
+  .slideStamp {
+    right: 22px;
+    bottom: 24px;
+    width: 88px;
+    height: 88px;
   }
 
   .copy {
